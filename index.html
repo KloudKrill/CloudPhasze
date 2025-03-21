@@ -3,284 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StratEdge | Next-Level Business Consulting</title>
+    <title>StratEdge | Strategic Business Transformation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Modern Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            line-height: 1.7;
-            color: #2d3436;
-            background: #f8f9fa;
-        }
-
-        /* Gradient Color Scheme */
-        :root {
-            --primary-gradient: linear-gradient(135deg, #000428 0%, #004e92 100%);
-            --accent-silver: linear-gradient(45deg, #c0c0c0, #e0e0e0);
-            --highlight-white: #ffffff;
-            --hover-blue: #007bff;
-        }
-
-        /* Modern Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem;
-            position: fixed;
+        /* Previous styles remain, adding new graphic styles */
+        
+        /* Custom Service Illustrations */
+        .service-graphic {
             width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        /* Animated Hero Section */
-        .hero {
-            background: var(--primary-gradient);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 2rem;
-            color: var(--highlight-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            left: -50px;
-            width: 200px;
             height: 200px;
-            background: rgba(255,255,255,0.1);
-            transform: rotate(45deg);
-            animation: float 6s infinite;
+            position: relative;
+            margin: 2rem 0;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            animation: slideUp 1s ease;
-        }
-
-        /* Modern Service Cards */
-        .services-grid {
-            max-width: 1300px;
-            margin: 5rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            padding: 0 2rem;
-        }
-
-        .service-card {
-            background: var(--highlight-white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.4s, box-shadow 0.4s;
+        /* Growth Architecture Graphic */
+        .growth-illustration {
+            background: linear-gradient(145deg, #004e92 0%, #000428 100%);
+            border-radius: 12px;
             position: relative;
             overflow: hidden;
         }
 
-        .service-card::before {
+        .growth-illustration::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--accent-silver);
-            transform: rotate(45deg);
-            opacity: 0.1;
-            transition: opacity 0.4s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        /* Modern Contact Form */
-        .contact-section {
-            background: var(--accent-silver);
-            padding: 6rem 2rem;
-        }
-
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--highlight-white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            transition: border-color 0.3s;
-            font-size: 1rem;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--hover-blue);
-            outline: none;
-        }
-
-        /* Animated Button */
-        .cta-button {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255,255,255,0.3),
-                transparent
-            );
-            transition: left 0.6s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,78,146,0.3);
-        }
-
-        .cta-button:hover::after {
-            left: 100%;
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: rotate(45deg) translateY(0); }
-            50% { transform: rotate(45deg) translateY(20px); }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .service-card {
-                padding: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">StratEdge</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#services">Solutions</a>
-                <a href="#contact">Connect</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Elevate Your Business Strategy</h1>
-            <p>Harness data-driven insights and expert guidance for transformative growth</p>
-            <button class="cta-button">Book Strategy Session</button>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-chart-line fa-3x" style="color: #004e92;"></i>
-                <h3>Growth Architecture</h3>
-                <p>Scalable business models and market expansion strategies</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-cogs fa-3x" style="color: #004e92;"></i>
-                <h3>Operational Precision</h3>
-                <p>Process optimization and efficiency maximization</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-brain fa-3x" style="color: #004e92;"></i>
-                <h3>Leadership Innovation</h3>
-                <p>Executive coaching and organizational transformation</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-form">
-            <h2>Start Your Transformation</h2>
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Business Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea rows="6" placeholder="Describe Your Challenge..." required></textarea>
-                </div>
-                <button type="submit" class="cta-button">Send Proposal Request</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background: var(--primary-gradient); color: white; padding: 3rem; text-align: center;">
-        <p>© 2023 StratEdge Consulting Group. All rights reserved.</p>
-        <div style="margin-top: 2rem;">
-            <a href="#" style="color: white; margin: 0 1rem;"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="#" style="color: white; margin: 0 1rem;"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="#" style="color: white; margin: 0 1rem;"><i class="fas fa-envelope fa-2x"></i></a>
-        </div>
-    </footer>
-</body>
-</html>
+            width: 80%;
+            height: 80%;
+            background: 
+                linear-gradient(45deg, transparent 60%, rgba(255,255,255,0.1) 60%),
+                repeating-linear-gradient(-

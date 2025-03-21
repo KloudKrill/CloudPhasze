@@ -3,172 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteConsult | Strategic Business Solutions</title>
+    <title>StratEdge | Next-Level Business Consulting</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        /* Modern Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: #2d3436;
+            background: #f8f9fa;
         }
 
-        /* Color Scheme */
+        /* Gradient Color Scheme */
         :root {
-            --primary-blue: #0056b3;
-            --accent-silver: #c0c0c0;
+            --primary-gradient: linear-gradient(135deg, #000428 0%, #004e92 100%);
+            --accent-silver: linear-gradient(45deg, #c0c0c0, #e0e0e0);
             --highlight-white: #ffffff;
+            --hover-blue: #007bff;
         }
 
-        /* Header Styles */
+        /* Modern Header */
         header {
-            background: var(--primary-blue);
-            padding: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .logo {
-            color: var(--highlight-white);
-            font-size: 1.5rem;
-            font-weight: bold;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--highlight-white);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-silver);
-        }
-
-        /* Hero Section */
+        /* Animated Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('office-bg.jpg');
-            background-size: cover;
+            background: var(--primary-gradient);
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 0 2rem;
             color: var(--highlight-white);
-            padding: 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            animation: float 6s infinite;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: slideUp 1s ease;
         }
 
-        /* Services Section */
-        .services {
-            padding: 5rem 2rem;
-            background: var(--highlight-white);
-        }
-
+        /* Modern Service Cards */
         .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1300px;
+            margin: 5rem auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 0 2rem;
         }
 
         .service-card {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
+            background: var(--highlight-white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--accent-silver);
+            transform: rotate(45deg);
+            opacity: 0.1;
+            transition: opacity 0.4s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
 
-        /* Contact Form */
+        /* Modern Contact Form */
         .contact-section {
-            background: #f5f5f5;
-            padding: 5rem 2rem;
+            background: var(--accent-silver);
+            padding: 6rem 2rem;
         }
 
         .contact-form {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             background: var(--highlight-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         input, textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--accent-silver);
-            border-radius: 4px;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+            font-size: 1rem;
         }
 
-        button {
-            background: var(--primary-blue);
+        input:focus, textarea:focus {
+            border-color: var(--hover-blue);
+            outline: none;
+        }
+
+        /* Animated Button */
+        .cta-button {
+            background: var(--primary-gradient);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        button:hover {
-            background: #003d82;
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            transition: left 0.6s;
         }
 
-        /* Footer */
-        footer {
-            background: var(--primary-blue);
-            color: var(--highlight-white);
-            padding: 2rem;
-            text-align: center;
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,78,146,0.3);
+        }
+
+        .cta-button:hover::after {
+            left: 100%;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(20px); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
-
-            .services-grid {
-                grid-template-columns: 1fr;
+            
+            .service-card {
+                padding: 2rem;
             }
         }
     </style>
@@ -177,71 +215,71 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">EliteConsult</div>
+            <div class="logo">StratEdge</div>
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="#services">Solutions</a>
+                <a href="#contact">Connect</a>
             </div>
         </nav>
     </header>
 
-    <!-- Home Page -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Strategic Business Excellence</h1>
-            <p>Transform your organization with our expert consulting services</p>
-            <button>Schedule Consultation</button>
+            <h1>Elevate Your Business Strategy</h1>
+            <p>Harness data-driven insights and expert guidance for transformative growth</p>
+            <button class="cta-button">Book Strategy Session</button>
         </div>
     </section>
 
-    <!-- Services Page -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="services-grid">
             <div class="service-card">
-                <h3>Strategic Planning</h3>
-                <p>Comprehensive business strategy development and implementation</p>
-                <button>Learn More</button>
+                <i class="fas fa-chart-line fa-3x" style="color: #004e92;"></i>
+                <h3>Growth Architecture</h3>
+                <p>Scalable business models and market expansion strategies</p>
             </div>
             <div class="service-card">
-                <h3>Operational Efficiency</h3>
-                <p>Streamline processes and maximize organizational productivity</p>
-                <button>Learn More</button>
+                <i class="fas fa-cogs fa-3x" style="color: #004e92;"></i>
+                <h3>Operational Precision</h3>
+                <p>Process optimization and efficiency maximization</p>
             </div>
             <div class="service-card">
-                <h3>Leadership Development</h3>
-                <p>Executive coaching and leadership team optimization</p>
-                <button>Learn More</button>
+                <i class="fas fa-brain fa-3x" style="color: #004e92;"></i>
+                <h3>Leadership Innovation</h3>
+                <p>Executive coaching and organizational transformation</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Page -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="contact-form">
-            <h2>Contact Us</h2>
+            <h2>Start Your Transformation</h2>
             <form>
                 <div class="form-group">
-                    <input type="text" placeholder="Name" required>
+                    <input type="text" placeholder="Full Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" placeholder="Business Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea rows="5" placeholder="Message" required></textarea>
+                    <textarea rows="6" placeholder="Describe Your Challenge..." required></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit" class="cta-button">Send Proposal Request</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 EliteConsult. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <footer style="background: var(--primary-gradient); color: white; padding: 3rem; text-align: center;">
+        <p>© 2023 StratEdge Consulting Group. All rights reserved.</p>
+        <div style="margin-top: 2rem;">
+            <a href="#" style="color: white; margin: 0 1rem;"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="#" style="color: white; margin: 0 1rem;"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#" style="color: white; margin: 0 1rem;"><i class="fas fa-envelope fa-2x"></i></a>
         </div>
     </footer>
 </body>
